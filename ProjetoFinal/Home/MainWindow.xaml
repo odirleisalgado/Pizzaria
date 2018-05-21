@@ -1,0 +1,19 @@
+﻿ Window x:Class="Pizzaria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pizzaria"
+        mc:Ignorable="d"
+        Title="Tela Inicial" Height="350" Width="525" WindowState="Maximized"><Grid Background="#FF252E3B">
+    <StackPanel Background="#FF1A2028" Margin="0,44,0,0" Width="200" HorizontalAlignment="Left">
+        <Button Content="Pizzas" Margin="0,80,0,0" Width="200" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Stencil" FontSize="16" Height="47" FontWeight="Normal"/>
+        <Button Content="Clientes" Width="200" BorderBrush="{x:Null}" Foreground="#DDDADADA" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Stencil" FontSize="16" Height="46"/>
+        <Button Content="Pedido" Width="200"  BorderBrush="{x:Null}" Foreground="#DDDADADA" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Stencil" FontSize="16" Height="47"/>
+    </StackPanel>
+    <StackPanel Height="44" VerticalAlignment="Top" Background="#FF1A2028"/>
+    <Image Height="98" Margin="24,12,0,0" Width="146" HorizontalAlignment="Left" VerticalAlignment="Top" Source="img/logo1.png">
+        <Image.OpacityMask>
+            <ImageBrush ImageSource="img/logo1.png"/>
+        </Image.OpacityMask>
+    </Image>
