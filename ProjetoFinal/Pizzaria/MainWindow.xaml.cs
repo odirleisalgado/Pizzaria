@@ -25,17 +25,18 @@ namespace Pizzaria
             InitializeComponent();
         }
 
-        private void btnPedido_Click(object sender, RoutedEventArgs e)
-        {
-            TelaPedido pedido = new TelaPedido();
-            pedido.ShowDialog();
-        }
 
         private void btnPizzas_Click(object sender, RoutedEventArgs e)
         {
             CadastroPizza novoCad = new CadastroPizza();
-            novoCad.ShowDialog();          
+            novoCad.ShowDialog();
         }
+
+        private void btnListarBebidas_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroBebida novoCad = new CadastroBebida();
+            novoCad.ShowDialog();
+        } 
 
         private void btnCliente_Click(object sender, RoutedEventArgs e)
         {
@@ -43,10 +44,18 @@ namespace Pizzaria
             tela.ShowDialog();
         }
 
+        private void btnPedido_Click(object sender, RoutedEventArgs e)
+        {
+            TelaPedido pedido = new TelaPedido();
+            pedido.ShowDialog();
+        }
+
         private void btnListarPedido_Click(object sender, RoutedEventArgs e)
         {
             TelaListarPedidos listar = new TelaListarPedidos();
             listar.ShowDialog();
         }
+
+
     }
 }

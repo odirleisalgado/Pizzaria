@@ -18,6 +18,7 @@ namespace Modelos.DAL
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Pizza> Pizzas { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Bebida> Bebidas { get; set; }
 
 
 

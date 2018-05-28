@@ -38,34 +38,7 @@ namespace Pizzaria
             this.Close();
         }
 
-       // private void btnExcluir_Click(object sender, RoutedEventArgs e)
-       // {
-
-           // bool resp;       
-             //  try
-                //{
-                   //resp = Controller.ClienteController.ExcluirCliente(int.Parse(DtGrid.SelectedValue.ToString()));
-
-                   // if (resp==true)
-                  // {
-                       // MessageBox.Show("Item Excluído com Sucesso!!!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                                           
-                   // }
-                   // else
-                  //  {
-                       // Controller.PedidoController.excluirPedidoPorCliente(int.Parse(DtGrid.SelectedValue.ToString()));
-                      //  MessageBox.Show("Item Excluído com Sucesso!!!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
-                       // DtGrid.ItemsSource = null;
-                      //  DtGrid.ItemsSource = Controller.ClienteController.retornaClientes();
-                 //}
-              // }
-              //  catch (Exception)
-              // {
-                 //   MessageBox.Show("Por Favor, Selecione um Item !!!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
-                   // MessageBox.Show(DtGrid.SelectedValue.ToString());
-              // }
-           
-       // }
+       
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
@@ -74,12 +47,17 @@ namespace Pizzaria
                 novo = Controller.ClienteController.retornaClientePorId(int.Parse(DtGrid.SelectedValue.ToString()));
                 txtNome.Text = novo.Nome.ToString();              
                 txtTelefone.Text = novo.Telefone.ToString();
+                txtTelefone.IsEnabled = false;
                 txtEnd.Text = novo.Endereco;
                 txtNumero.Text = novo.Numero.ToString();
                 txtBairro.Text = novo.Bairro;
 
                 ViewBoxEdit.Visibility = Visibility.Visible;
+<<<<<<< HEAD
+                
+=======
                 //btnExcluir.Visibility = Visibility.Hidden;
+>>>>>>> ae417d03046eb9253d26c6600342e0877b405387
                
             }
             catch (Exception)
@@ -115,7 +93,11 @@ namespace Pizzaria
                     MessageBox.Show("Edição Realizada Com Sucesso!!!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                     DtGrid.ItemsSource = Controller.ClienteController.retornaClientes();
                     ViewBoxEdit.Visibility = Visibility.Hidden;
+<<<<<<< HEAD
+                   
+=======
                     //btnExcluir.Visibility = Visibility.Visible;
+>>>>>>> ae417d03046eb9253d26c6600342e0877b405387
 
                 }
             }
@@ -131,7 +113,11 @@ namespace Pizzaria
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             ViewBoxEdit.Visibility = Visibility.Hidden;
+<<<<<<< HEAD
+           
+=======
            // btnExcluir.Visibility = Visibility.Visible;
+>>>>>>> ae417d03046eb9253d26c6600342e0877b405387
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)

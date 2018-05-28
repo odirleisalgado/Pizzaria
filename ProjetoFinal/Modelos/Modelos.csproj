@@ -57,6 +57,7 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Pedido.cs" />
+    <Compile Include="Bebida.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

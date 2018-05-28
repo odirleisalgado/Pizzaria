@@ -5,6 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzaria"
         mc:Ignorable="d"
+<<<<<<< HEAD
+        Title="Tela Inicial"  WindowState="Maximized">
+
+
+
+
+
+
+    <Grid Background="#FF252E3B" Width="Auto" Margin="0,0,0,0">
+
+            <StackPanel Background="#FF1A2028" Margin="0,0,0,0" Width="200" HorizontalAlignment="Left">
+
+                <Image Height="102" Width="175" HorizontalAlignment="Center" VerticalAlignment="Top" Source="img/logo1.png" RenderTransformOrigin="0.699,0.529" Margin="0,5,0,0">
+                    <Image.OpacityMask>
+                        <ImageBrush ImageSource="img/logo1.png"/>
+                    </Image.OpacityMask>
+                </Image>
+
+                <Button  x:Name="btnPizzas" Width="200" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,20,0,0" Click="btnPizzas_Click">
+                    <StackPanel Orientation="Horizontal" Width="200" Margin="-20,-10" Height="50">
+                        <Image Source="img/pizza-slice.png" Stretch="Uniform" Height="30" Width="25" VerticalAlignment="Center" Margin="20,0,0,0" OpacityMask="White"/>
+                        <TextBlock Text="Pizzas" FontFamily="Stencil" FontSize="16" FontStyle="Normal" Foreground="White" Width="73" Margin="15,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button  x:Name="btnBebidas" Width="200" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Click="btnListarBebidas_Click">
+                    <StackPanel Orientation="Horizontal" Width="200" Margin="-20,-10" Height="50">
+                        <Image Source="img/bebida.png" Stretch="Uniform" Height="30" Width="30" VerticalAlignment="Center" Margin="15,0,0,0" OpacityMask="White"/>
+                        <TextBlock Text="Bebidas" FontFamily="Stencil" FontSize="16" FontStyle="Normal" Foreground="White" Width="73" Margin="15,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button   x:Name="btnCliente" Width="200" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Click="btnCliente_Click">
+                    <StackPanel Orientation="Horizontal" Width="200" Margin="-20,-10" Height="50">
+                        <Image Source="img/contatos.png" Stretch="Uniform" Height="30" Width="30" VerticalAlignment="Center" Margin="15,0,0,0" OpacityMask="White"/>
+                        <TextBlock Text="Clientes" FontFamily="Stencil" FontSize="16" FontStyle="Normal" Foreground="White" Width="73" Margin="15,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button  x:Name="btnPedido" Width="200" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Click="btnPedido_Click">
+                    <StackPanel Orientation="Horizontal" Width="200" Margin="-20,-10" Height="50">
+                        <Image Source="img/pedido.png" Stretch="Uniform" Height="30" Width="30" VerticalAlignment="Center" Margin="15,0,0,0" OpacityMask="White"/>
+                        <TextBlock Text="Novo Pedido" FontFamily="Stencil" FontSize="16" FontStyle="Normal" Foreground="White" Width="109" Margin="15,16,0,16" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button  x:Name="btnListarPedido" Width="200" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0" Click="btnListarPedido_Click">
+                    <StackPanel Orientation="Horizontal" Width="200" Margin="-20,-10" Height="50">
+                        <Image Source="img/pedidos.png" Stretch="Uniform" Height="30" Width="30" VerticalAlignment="Center" Margin="15,0,0,0" OpacityMask="White"/>
+                        <TextBlock Text="Pedidos" FontFamily="Stencil" FontSize="16" FontStyle="Normal" Foreground="White" Width="73" Margin="15,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+
+
+            </StackPanel>
+
+
+        </Grid>
+    
+=======
         Title="Tela Inicial" Height="401" Width="819" WindowState="Maximized">
 
 
@@ -43,4 +100,5 @@
             </Image.OpacityMask>
         </Image>
     </Grid>
+>>>>>>> ae417d03046eb9253d26c6600342e0877b405387
 </Window>

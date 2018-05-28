@@ -1,0 +1,61 @@
+﻿<Window
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pizzaria"
+        xmlns:Converters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf" x:Class="Pizzaria.CadastroBebida"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        mc:Ignorable="d"
+        Title="CadastroBebida"  Height="593" Width="954" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" BorderBrush="White" Margin="0" KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <Converters:BrushRoundConverter x:Key="BrushRoundConverter"/>
+    </Window.Resources>
+
+    <Grid x:Name="Corpo" Background="#FF1A2028">
+        <StackPanel Height="30" Margin="0" VerticalAlignment="Top" Background="#E5F5EB29">
+            <Button x:Name="btnFechar" Content="" Width="38" HorizontalAlignment="Right" Foreground="#DDFFFFFF" BorderBrush="{x:Null}" FontSize="10" Click="btnFechar_Click" Margin="0,-4,-5,0" Height="38" VerticalAlignment="Stretch">
+                <Button.Background>
+                    <ImageBrush ImageSource="img/Fechar.png"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <Label Content="Bebidas" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" FontFamily="Stencil" Foreground="#FF1A2028" FontSize="14"/>
+        <Label Content="Bebidas Cadastradas" HorizontalAlignment="Left" Margin="26,66,0,0" VerticalAlignment="Top" Width="184" Foreground="#DDFFFFFF" FontSize="16" FontFamily="Stencil" RenderTransformOrigin="0.378,0.517"/>
+        <Label Content="Cadastrar Bebida" HorizontalAlignment="Left" Margin="502,66,0,0" VerticalAlignment="Top" Width="201" Foreground="#DDFFFFFF" FontSize="16" FontFamily="Stencil"/>
+        <Button  x:Name="btnCadSabor" Content="Salvar" HorizontalAlignment="Left" Margin="506,151,0,0" VerticalAlignment="Top" Width="195" Background="#4C1C64CD" Click="btnCadSabor_Click" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4"/>
+
+
+        <TextBox Padding="1" x:Name="txtNovoSabor" materialDesign:HintAssist.Hint="Digite aqui a descrição" HorizontalAlignment="Left" Height="30" Margin="507,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" BorderBrush="#FFF5EB29" Foreground="#DDFFFFFF" SelectionBrush="#FF0078D7" CaretBrush="#FFF5EB29" CharacterCasing="Upper" KeyDown="txtNovoSabor_KeyDown"/>
+
+        <DataGrid SelectedValuePath="BebidaID" x:Name="DtGrid" HorizontalGridLinesBrush="{x:Null}" CanUserReorderColumns="False" CanUserResizeColumns="False"  CanUserResizeRows="False" Margin="30,110,526,93" Background="{x:Null}" VerticalGridLinesBrush="{x:Null}" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserDeleteRows="False" BorderBrush="{x:Null}" FontFamily="Century Gothic" FontSize="12" FontWeight="Bold" SelectionMode="Single" IsReadOnly="True" Foreground="#DDFFFFFF">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Binding="{Binding BebidaID}" Header="Código" Width="80" SortDirection="Ascending"/>
+                <DataGridTextColumn  Binding="{Binding SaborBebida}" Header="Descrição" Width="*" SortDirection="Ascending" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Excluir" HorizontalAlignment="Left" Margin="506,218,0,0" VerticalAlignment="Top" Width="202" Foreground="#DDFFFFFF" FontSize="16" FontFamily="Stencil"/>
+        <Button  x:Name="btnExcluir" Content="Excluir Item Selecionado" HorizontalAlignment="Left" Margin="506,254,0,0" VerticalAlignment="Top" Width="201" Background="#4C1C64CD" Click="btnExcluir_Click" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4"/>
+        <Label Content="Editar" HorizontalAlignment="Left" Margin="507,323,0,0" VerticalAlignment="Top" Width="202" Foreground="#DDFFFFFF" FontSize="16" FontFamily="Stencil"/>
+
+
+        <Button  x:Name="btnEditar" Content="Editar Item Selecionado" HorizontalAlignment="Left" Margin="508,358,0,0" VerticalAlignment="Top" Width="201" Background="#4C1C64CD" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4" Click="btnEditar_Click"/>
+
+        <TextBox Padding="1" x:Name="txtEditarItem" HorizontalAlignment="Left" Height="30" Margin="507,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="{x:Null}" BorderBrush="#FFFF1B1B" Foreground="#DDFFFFFF" SelectionBrush="#FF31D318" CaretBrush="#FFFF1B1B" CharacterCasing="Upper" AllowDrop="False" IsTabStop="False" Visibility="Hidden"/>
+        <Button  x:Name="btnSalvarAlt" Content="Salvar Alteração" HorizontalAlignment="Left" Margin="507,468,0,0" VerticalAlignment="Top" Width="195" Background="#FF252E3B" Click="btnSalvarAlt_Click" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4" Visibility="Hidden"/>
+
+
+    </Grid>
+
+
+</Window>

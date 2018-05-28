@@ -40,7 +40,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button  x:Name="btnExcluir" Content="Excluir Selecionado" HorizontalAlignment="Left" Margin="539,391,0,0" VerticalAlignment="Top" Width="178" Background="#FF252E3B" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4" Visibility="Hidden"/>
 
         <Button  x:Name="btnEditar" Content="Editar Item Selecionado" HorizontalAlignment="Left" Margin="743,391,0,0" VerticalAlignment="Top" Width="201" Background="#4C1C64CD" Foreground="White" BorderBrush="#FFF9F9F9" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Century Gothic" FontWeight="Normal" BorderThickness="1" ClipToBounds="True" Padding="16,4" Click="btnEditar_Click"/>
        

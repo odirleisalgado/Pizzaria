@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CadastroBebida.xaml.cs">
+      <DependentUpon>CadastroBebida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CadastroCliente.xaml.cs">
       <DependentUpon>CadastroCliente.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
     <Compile Include="TelaPedidoFinalizado.xaml.cs">
       <DependentUpon>TelaPedidoFinalizado.xaml</DependentUpon>
     </Compile>
+    <Page Include="CadastroBebida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CadastroCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +177,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\bebida.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="img\Clientes.png" />
     <Resource Include="img\Clientes2.png" />
     <Resource Include="img\contatos.png" />
@@ -177,12 +187,10 @@
     <Resource Include="img\logo1.png" />
     <Resource Include="img\menu.png" />
     <Resource Include="img\menu2.png" />
-    <Resource Include="img\pizza-slice.png" />
-    <Resource Include="img\team.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\pedido.png" />
     <Resource Include="img\pedidos.png" />
+    <Resource Include="img\pizza-slice.png" />
+    <Resource Include="img\team.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -56,6 +56,7 @@
     <Compile Include="ClienteController.cs" />
     <Compile Include="ItemController.cs" />
     <Compile Include="PedidoController.cs" />
+    <Compile Include="BebidaController.cs" />
     <Compile Include="PizzaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

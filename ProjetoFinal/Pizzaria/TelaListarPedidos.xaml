@@ -27,7 +27,7 @@
             </Button>
         </StackPanel>
         <Label Content="Pedidos" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" FontFamily="Stencil" Foreground="#FF1A2028" FontSize="14"/>
-        <DataGrid SelectedValuePath="PedidoID" x:Name="DtGridPedido" HorizontalGridLinesBrush="{x:Null}" CanUserReorderColumns="False" CanUserResizeColumns="False" IsReadOnly="True"  CanUserResizeRows="False" Margin="126,35,122,278" Background="{x:Null}" VerticalGridLinesBrush="{x:Null}" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserDeleteRows="False" BorderBrush="{x:Null}" PreviewMouseDoubleClick="DtGridPedido_PreviewMouseDoubleClick">
+        <DataGrid SelectedValuePath="PedidoID" x:Name="DtGridPedido" HorizontalGridLinesBrush="{x:Null}" CanUserReorderColumns="False" CanUserResizeColumns="False" IsReadOnly="True"  CanUserResizeRows="False" Margin="-1,35,1,278" Background="{x:Null}" VerticalGridLinesBrush="{x:Null}" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserDeleteRows="False" BorderBrush="{x:Null}" PreviewMouseDoubleClick="DtGridPedido_PreviewMouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn  Binding="{Binding PedidoID}" Header="ID Pedido" Width="100" SortDirection="Ascending"  />
                 <DataGridTextColumn  Binding="{Binding DataPedido}" Header="Data/Hora" Width="200" SortDirection="Ascending"  />

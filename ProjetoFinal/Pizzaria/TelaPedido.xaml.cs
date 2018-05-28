@@ -22,6 +22,7 @@ namespace Pizzaria
     public partial class TelaPedido : Window
     {
         List<Pizza> ListaSabores = new List<Pizza>();
+        List<Bebida> ListaBebidas = new List<Bebida>();
         public static List<Item> itemList = new List<Item>();
         
         static double  subTotal = 0.00;
@@ -40,7 +41,16 @@ namespace Pizzaria
                 cmbSabores.Items.Add(x.SaborPizza);
                 cmbSabores2.Items.Add(x.SaborPizza);
                 cmbSabores3.Items.Add(x.SaborPizza);
-            }           
+            }
+
+            ListaBebidas = Controller.BebidaController.retornaSabores(); // recebe a lista de refrigerantes cadastrados
+            
+            foreach (var x in ListaBebidas)  // realiza a inserção dos refrigerantes nas combobox
+            {
+                cmbBebida.Items.Add(x.SaborBebida);
+                
+            }
+
         }
 
 
@@ -75,6 +85,9 @@ namespace Pizzaria
         }
 
 
+<<<<<<< HEAD
+       
+=======
         // BOTÃO FINALIZAR PEDIDO
         private void btnFinalizar_Click(object sender, RoutedEventArgs e)
         {
@@ -106,6 +119,7 @@ namespace Pizzaria
                 MessageBox.Show("Por Favor, Preencha Os Campos Corretamente", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+>>>>>>> ae417d03046eb9253d26c6600342e0877b405387
         
         // BOTÃO ADICIONAR ITENS
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
@@ -117,14 +131,18 @@ namespace Pizzaria
                 novoItem = tamanhoSelecionado(novoItem);
                 novoItem.Sabor = saborSelecionado();
                 novoItem = adicionalSelecionado(novoItem);
-               
+                novoItem = bebidaSelecionada(novoItem);
+
 
                 ListView1.Items.Add(novoItem);              
                 itemList.Add(novoItem);
 
+                
                 cmbSabores.SelectedIndex = -1;
                 cmbSabores2.SelectedIndex = -1;
                 cmbSabores3.SelectedIndex = -1;
+                cmbBebida.SelectedIndex = -1;
+                txtQuantidade.Text = null;
                 cbAzeitona.IsChecked = false;
                 cbCheddar.IsChecked = false;
                 cbBacon.IsChecked = false;
@@ -162,6 +180,40 @@ namespace Pizzaria
                 MessageBox.Show("Por Favor, Selecione Um Item ", "Erro", MessageBoxButton.OK,MessageBoxImage.Error);
             }
         }
+
+
+        // BOTÃO FINALIZAR PEDIDO
+        private void btnFinalizar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Pedido novoPedido = new Pedido();
+
+                novoPedido.clienteId = int.Parse(blockId.Text);
+
+                novoPedido.DataPedido = DateTime.Now.ToString();
+
+                novoPedido.Total = double.Parse(txtTotal.Text);
+
+                if (itemList.Count == 0)
+                {
+                    MessageBox.Show("Favor inserir um item!!", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else
+                {
+                    novoPedido.ListaItens = itemList;
+                    Controller.PedidoController.SalvarPedido(novoPedido);
+                    TelaPedidoFinalizado novaTela = new TelaPedidoFinalizado();
+                    novaTela.ShowDialog();
+                    limparCampos();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por Favor, preencha os campos corretamente", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
 
         // BOTÃO DE FECHAR A JANELA
         private void btnFechar_Click(object sender, RoutedEventArgs e)
@@ -269,29 +321,46 @@ namespace Pizzaria
             if (cbAzeitona.IsChecked == true)
             {
                 itemRecebido.Adicional = "+Azeitona ";
-                itemRecebido.Valor +=  5.30;
+                itemRecebido.Valor +=  5.00;
 
             }
             if (cbBorda.IsChecked == true)
             {
                 itemRecebido.Adicional += "+Borda Recheada ";
-                itemRecebido.Valor += 5.75;
+                itemRecebido.Valor += 5.00;
             }
             if (cbCheddar.IsChecked == true)
             {
                 itemRecebido.Adicional += "+Cheddar ";
-                itemRecebido.Valor += 5.50;
+                itemRecebido.Valor += 5.00;
             }
             if (cbBacon.IsChecked == true)
             {
                 itemRecebido.Adicional += "+Bacon ";
-                itemRecebido.Valor += 5.20;
+                itemRecebido.Valor += 5.00;
             }
 
             return itemRecebido;
 
 
         }
+
+        //RETORNA UMA STRING COM O REFRIGERANTE SELECIONADO RECEBENDO O OBJETO ITEM COMO PARÂMETRO
+        public Item bebidaSelecionada(Item item)
+        {
+            if (cmbBebida.SelectedIndex >= 0)
+            {
+                item.Bebida = cmbBebida.SelectedItem.ToString();
+                item.Valor+= (6.00 * double.Parse(txtQuantidade.Text.ToString()));
+                return item;
+            }
+            return item;
+
+        }
+
+
+
+
 
         //REMOVE ITEM DA LISTA ATUAL
         public static bool removeItem(int id)
@@ -313,6 +382,8 @@ namespace Pizzaria
         {
             subTotal = 0.00;
             cmbSabores.SelectedIndex = -1;
+            cmbBebida.SelectedIndex = -1;
+            txtQuantidade.Text = null;
             cmbSabores2.SelectedIndex = -1;
             cmbSabores3.SelectedIndex = -1;
             cbAzeitona.IsChecked = false;
@@ -349,6 +420,8 @@ namespace Pizzaria
                 btnFechar_Click(this, new RoutedEventArgs());
             }
         }
+
+        
     }
 
 }
