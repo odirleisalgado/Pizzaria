@@ -85,41 +85,10 @@ namespace Pizzaria
         }
 
 
-<<<<<<< HEAD
-       
-=======
-        // BOTÃO FINALIZAR PEDIDO
-        private void btnFinalizar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Pedido novoPedido = new Pedido();
-                
-                novoPedido.clienteId = int.Parse(blockId.Text);
-                
-                novoPedido.DataPedido = DateTime.Now.ToString();
 
-                novoPedido.Total = double.Parse(txtTotal.Text);
-                
-                if (itemList.Count==0)
-                {
-                    MessageBox.Show("Favor Inserir Um Item!!", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-                else
-                {                    
-                        novoPedido.ListaItens = itemList;                      
-                        Controller.PedidoController.SalvarPedido(novoPedido);
-                        TelaPedidoFinalizado novaTela = new TelaPedidoFinalizado();
-                        novaTela.ShowDialog();
-                        limparCampos();                 
-                }                   
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Por Favor, Preencha Os Campos Corretamente", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
->>>>>>> ae417d03046eb9253d26c6600342e0877b405387
+       
+       
+
         
         // BOTÃO ADICIONAR ITENS
         private void btnAdicionar_Click(object sender, RoutedEventArgs e)
@@ -357,7 +326,6 @@ namespace Pizzaria
             return item;
 
         }
-
 
 
 

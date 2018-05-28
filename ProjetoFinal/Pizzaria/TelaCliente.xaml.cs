@@ -53,11 +53,7 @@ namespace Pizzaria
                 txtBairro.Text = novo.Bairro;
 
                 ViewBoxEdit.Visibility = Visibility.Visible;
-<<<<<<< HEAD
-                
-=======
-                //btnExcluir.Visibility = Visibility.Hidden;
->>>>>>> ae417d03046eb9253d26c6600342e0877b405387
+
                
             }
             catch (Exception)
@@ -93,11 +89,7 @@ namespace Pizzaria
                     MessageBox.Show("Edição Realizada Com Sucesso!!!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                     DtGrid.ItemsSource = Controller.ClienteController.retornaClientes();
                     ViewBoxEdit.Visibility = Visibility.Hidden;
-<<<<<<< HEAD
-                   
-=======
-                    //btnExcluir.Visibility = Visibility.Visible;
->>>>>>> ae417d03046eb9253d26c6600342e0877b405387
+
 
                 }
             }
@@ -113,11 +105,7 @@ namespace Pizzaria
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             ViewBoxEdit.Visibility = Visibility.Hidden;
-<<<<<<< HEAD
-           
-=======
-           // btnExcluir.Visibility = Visibility.Visible;
->>>>>>> ae417d03046eb9253d26c6600342e0877b405387
+
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
