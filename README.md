@@ -1,4 +1,4 @@
-# Projeto_Pizzaria
+# Projeto_Pizzaria - WPF
 
 Projeto desenvolvido com base nas necessidades de uma pizzaria onde obtemos as seguintes funcionalidades:
 
